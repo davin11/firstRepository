@@ -15,5 +15,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test
       run: echo "hello" > ${{ github.workspace }}/txt.txt
+    - uses: papeloto/action-zip@v1
+      with:
+        files: "*.cpp"
+        dest: result.zip
+    - uses: actions/upload-artifact@v2
+      with:
+        name: result.zip
     
     
